@@ -1,0 +1,8 @@
+{
+  "name": "Remix Remix BFEL FLOW - Cattle Feed Distribution \u0026 Operations Platform",
+  "description": "Enterprise Distributor Management System (DMS) and Plant Operations Platform for Bharat Feeds \u0026 Extractions Ltd (Indore, MP). End-to-end order capture, payment verification, truck loading terminal, gate pass, dispatch, and claims management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
