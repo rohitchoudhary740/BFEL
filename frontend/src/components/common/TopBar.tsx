@@ -103,7 +103,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onToggleSidebar }) => {
       </div>
 
       {/* Zone 2: Authenticated Workspace Name & Context */}
-      <div className="hidden md:flex items-center">
+      <div className="hidden lg:flex items-center">
         <div className="px-3.5 py-1 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/80 flex items-center gap-2.5 shadow-xs">
           <span
             className={`w-2 h-2 rounded-full ${

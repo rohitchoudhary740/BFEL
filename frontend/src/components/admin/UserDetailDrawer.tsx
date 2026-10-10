@@ -104,7 +104,7 @@ export const UserDetailDrawer: React.FC<UserDetailDrawerProps> = ({ user: propUs
               </div>
               <div>
                 <span className="text-slate-400 text-[10px] block">Email</span>
-                <p className="font-semibold text-slate-800 dark:text-slate-200 truncate">{user.email}</p>
+                <p className="font-semibold text-slate-800 dark:text-slate-200 break-all">{user.email}</p>
               </div>
               <div>
                 <span className="text-slate-400 text-[10px] block">Applied Date</span>
@@ -203,13 +203,13 @@ export const UserDetailDrawer: React.FC<UserDetailDrawerProps> = ({ user: propUs
         </div>
 
         {/* Action Bar */}
-        <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-between">
+        <div className="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex items-center justify-between gap-3">
           {user.status === 'pending' ? (
             <>
               <button
                 type="button"
                 onClick={() => setIsRejecting(true)}
-                className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg cursor-pointer"
+                className="flex items-center justify-center gap-1.5 px-4 py-2.5 min-h-[44px] text-xs font-semibold text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/40 rounded-lg cursor-pointer"
               >
                 <AlertOctagon className="w-4 h-4" />
                 <span>Reject</span>
@@ -218,15 +218,15 @@ export const UserDetailDrawer: React.FC<UserDetailDrawerProps> = ({ user: propUs
               <button
                 type="button"
                 onClick={handleApprove}
-                className="flex items-center gap-1.5 px-5 py-2 text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-md cursor-pointer transition-all"
+                className="flex-1 flex items-center justify-center gap-1.5 px-5 py-2.5 min-h-[44px] text-xs font-bold bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-md cursor-pointer transition-all"
               >
                 <CheckCircle2 className="w-4 h-4" />
                 <span>Approve Account</span>
               </button>
             </>
           ) : user.status === 'active' ? (
-            <div className="w-full flex items-center justify-between">
-              <span className="text-emerald-600 font-semibold flex items-center gap-1">
+            <div className="w-full flex items-center justify-between gap-3">
+              <span className="text-emerald-600 font-semibold flex items-center gap-1 text-xs">
                 <CheckCircle2 className="w-4 h-4" /> Active Account
               </span>
               <button
@@ -235,21 +235,21 @@ export const UserDetailDrawer: React.FC<UserDetailDrawerProps> = ({ user: propUs
                   suspendUser(user.id, 'Administrative suspension');
                   onClose();
                 }}
-                className="px-3 py-1.5 text-xs text-rose-600 border border-rose-300 dark:border-rose-800 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/40 cursor-pointer"
+                className="px-4 py-2.5 min-h-[44px] text-xs text-rose-600 border border-rose-300 dark:border-rose-800 rounded-lg hover:bg-rose-50 dark:hover:bg-rose-950/40 cursor-pointer"
               >
                 Suspend Account
               </button>
             </div>
           ) : (
-            <div className="w-full flex items-center justify-between">
-              <span className="text-slate-500 font-mono">Status: {user.status.toUpperCase()}</span>
+            <div className="w-full flex items-center justify-between gap-3">
+              <span className="text-slate-500 font-mono text-xs">Status: {user.status.toUpperCase()}</span>
               <button
                 type="button"
                 onClick={() => {
                   activateUser(user.id);
                   onClose();
                 }}
-                className="px-3 py-1.5 text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg cursor-pointer"
+                className="px-4 py-2.5 min-h-[44px] text-xs bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg cursor-pointer"
               >
                 Reactivate Account
               </button>

@@ -181,7 +181,7 @@ export const mapBackendClaimToFrontend = (bc: BackendClaim): Claim => {
     dealerName: bc.dealer_name || 'Ramesh Patel',
     dealerAgency: bc.dealer_name ? `${bc.dealer_name} Agency` : 'Patel Agro Agency',
     distributorName: 'Malwa Agri Feeds Pvt Ltd',
-    claimType: (bc.claim_type as ClaimType) || 'transit_shortage',
+    claimType: (bc.claim_type as ClaimType) || 'shortage',
     expectedQuantityBags: bc.expected_bags || 400,
     receivedQuantityBags: bc.received_bags || 395,
     shortageQuantityBags: shortageBags,

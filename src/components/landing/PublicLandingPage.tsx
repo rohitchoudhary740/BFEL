@@ -433,12 +433,12 @@ export const PublicLandingPage: React.FC = () => {
             </div>
 
             {/* Distribution Corridor Console */}
-            <div className="rounded-3xl bg-slate-50/80 dark:bg-[#0A0D15] border border-slate-200/80 dark:border-white/[0.08] p-6 sm:p-8 space-y-6 shadow-2xl">
+            <div className="rounded-3xl bg-slate-50/80 dark:bg-[#0A0D15] border border-slate-200/80 dark:border-white/[0.08] p-5 sm:p-7 lg:p-8 space-y-6 shadow-2xl">
               {/* Geographic Corridor Schematic */}
               <div className="p-4 sm:p-6 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] overflow-hidden">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-200/80 dark:border-white/[0.06] text-xs font-mono text-slate-500">
                   <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white uppercase tracking-wider">
-                    <Navigation className="w-4 h-4 text-amber-500" />
+                    <Navigation className="w-4 h-4 text-amber-500 shrink-0" />
                     <span>Central Dispatch Hub: Manglia Plant, Indore (22.81° N, 75.92° E)</span>
                   </div>
                   <div className="text-[11px] text-zinc-400 font-medium">
@@ -446,49 +446,49 @@ export const PublicLandingPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="py-6">
-                  <svg viewBox="0 0 800 240" className="w-full h-auto select-none" preserveAspectRatio="xMidYMid meet">
+                <div className="py-4 sm:py-6">
+                  <svg viewBox="0 0 800 360" className="w-full h-auto select-none" preserveAspectRatio="xMidYMid meet">
                     {/* Background regional reference grid lines */}
-                    <line x1="40" y1="60" x2="760" y2="60" stroke="currentColor" strokeWidth="0.5" className="text-slate-200 dark:text-white/[0.03]" />
-                    <line x1="40" y1="120" x2="760" y2="120" stroke="currentColor" strokeWidth="0.5" className="text-slate-200 dark:text-white/[0.03]" />
-                    <line x1="40" y1="180" x2="760" y2="180" stroke="currentColor" strokeWidth="0.5" className="text-slate-200 dark:text-white/[0.03]" />
+                    <line x1="40" y1="70" x2="760" y2="70" stroke="currentColor" strokeWidth="0.5" className="text-slate-200 dark:text-white/[0.03]" />
+                    <line x1="40" y1="165" x2="760" y2="165" stroke="currentColor" strokeWidth="0.5" className="text-slate-200 dark:text-white/[0.03]" />
+                    <line x1="40" y1="260" x2="760" y2="260" stroke="currentColor" strokeWidth="0.5" className="text-slate-200 dark:text-white/[0.03]" />
 
                     {/* Highway Corridor Connecting Routes */}
                     {/* Route 1: NH-52 to Dewas Mandi (North-East, 42 km) */}
                     <path
-                      d="M 390 120 C 470 110, 540 85, 630 65"
+                      d="M 390 165 C 480 150, 560 115, 640 85"
                       fill="none"
                       stroke="#F58220"
-                      strokeWidth="3"
+                      strokeWidth="3.5"
                       strokeLinecap="round"
                     />
                     {/* Route 2: SH-27 to Ujjain Grain Mandi (North, 56 km) */}
                     <path
-                      d="M 390 120 C 375 75, 340 50, 310 35"
+                      d="M 390 165 C 375 115, 345 80, 320 55"
                       fill="none"
                       stroke="#38BDF8"
-                      strokeWidth="2.5"
+                      strokeWidth="3"
                       strokeLinecap="round"
                     />
                     {/* Route 3: NH-347BG to Sanwer Mandi (North-West, 32 km) */}
                     <path
-                      d="M 390 120 C 310 115, 250 100, 170 85"
+                      d="M 390 165 C 300 155, 230 130, 160 105"
                       fill="none"
                       stroke="#10B981"
-                      strokeWidth="2.5"
+                      strokeWidth="3"
                       strokeLinecap="round"
                     />
                     {/* Route 4: SH-1 to Khargone Hub (South, 140 km) */}
                     <path
-                      d="M 390 120 C 420 160, 480 185, 530 205"
+                      d="M 390 165 C 430 215, 475 250, 510 275"
                       fill="none"
                       stroke="#A855F7"
-                      strokeWidth="2.5"
+                      strokeWidth="3"
                       strokeLinecap="round"
                     />
 
                     {/* Central Production & Dispatch Hub: Manglia Plant */}
-                    <g transform="translate(390, 120)">
+                    <g transform="translate(390, 165)">
                       <circle cx="0" cy="0" r="30" className="fill-orange-500/10 stroke-orange-500/30" strokeWidth="1" />
                       <circle cx="0" cy="0" r="18" className="fill-[#F58220]" />
                       <circle cx="0" cy="0" r="7" className="fill-slate-950" />
@@ -501,104 +501,115 @@ export const PublicLandingPage: React.FC = () => {
                     </g>
 
                     {/* Node 1: Dewas Mandi (NH-52) */}
-                    <g transform="translate(630, 65)">
+                    <g transform="translate(640, 85)">
                       <circle cx="0" cy="0" r="12" className="fill-orange-500/20 stroke-orange-500" strokeWidth="2" />
                       <circle cx="0" cy="0" r="5" className="fill-orange-500" />
-                      <rect x="-35" y="-32" width="70" height="15" rx="3" className="fill-slate-900 dark:fill-black stroke-slate-700" strokeWidth="0.8" />
+                      <rect x="-38" y="-32" width="76" height="15" rx="3" className="fill-slate-900 dark:fill-black stroke-slate-700" strokeWidth="0.8" />
                       <text x="0" y="-21" textAnchor="middle" className="text-[8.5px] font-mono font-bold fill-orange-400">
                         NH-52 (42 km)
                       </text>
                       <text x="0" y="24" textAnchor="middle" className="text-[11px] font-mono font-bold fill-slate-900 dark:fill-white">
                         DEWAS MANDI
                       </text>
-                      <text x="0" y="37" textAnchor="middle" className="text-[9px] font-mono fill-slate-500 dark:text-zinc-400">
+                      <text x="0" y="38" textAnchor="middle" className="text-[9px] font-mono fill-slate-500 dark:text-zinc-400">
                         ~50 min transit
                       </text>
                     </g>
 
                     {/* Node 2: Ujjain Hub (SH-27) */}
-                    <g transform="translate(310, 35)">
+                    <g transform="translate(320, 55)">
                       <circle cx="0" cy="0" r="12" className="fill-sky-500/20 stroke-sky-400" strokeWidth="2" />
                       <circle cx="0" cy="0" r="5" className="fill-sky-400" />
-                      <rect x="-35" y="-32" width="70" height="15" rx="3" className="fill-slate-900 dark:fill-black stroke-slate-700" strokeWidth="0.8" />
+                      <rect x="-38" y="-32" width="76" height="15" rx="3" className="fill-slate-900 dark:fill-black stroke-slate-700" strokeWidth="0.8" />
                       <text x="0" y="-21" textAnchor="middle" className="text-[8.5px] font-mono font-bold fill-sky-300">
                         SH-27 (56 km)
                       </text>
                       <text x="0" y="24" textAnchor="middle" className="text-[11px] font-mono font-bold fill-slate-900 dark:fill-white">
                         UJJAIN GRAIN HUB
                       </text>
-                      <text x="0" y="37" textAnchor="middle" className="text-[9px] font-mono fill-slate-500 dark:text-zinc-400">
+                      <text x="0" y="38" textAnchor="middle" className="text-[9px] font-mono fill-slate-500 dark:text-zinc-400">
                         ~1 hr 10 min transit
                       </text>
                     </g>
 
                     {/* Node 3: Sanwer Mandi (NH-347BG) */}
-                    <g transform="translate(170, 85)">
+                    <g transform="translate(160, 105)">
                       <circle cx="0" cy="0" r="12" className="fill-emerald-500/20 stroke-emerald-500" strokeWidth="2" />
                       <circle cx="0" cy="0" r="5" className="fill-emerald-500" />
-                      <rect x="-42" y="-32" width="84" height="15" rx="3" className="fill-slate-900 dark:fill-black stroke-slate-700" strokeWidth="0.8" />
+                      <rect x="-44" y="-32" width="88" height="15" rx="3" className="fill-slate-900 dark:fill-black stroke-slate-700" strokeWidth="0.8" />
                       <text x="0" y="-21" textAnchor="middle" className="text-[8.5px] font-mono font-bold fill-emerald-400">
                         NH-347BG (32 km)
                       </text>
                       <text x="0" y="24" textAnchor="middle" className="text-[11px] font-mono font-bold fill-slate-900 dark:fill-white">
                         SANWER RURAL MANDI
                       </text>
-                      <text x="0" y="37" textAnchor="middle" className="text-[9px] font-mono fill-slate-500 dark:text-zinc-400">
+                      <text x="0" y="38" textAnchor="middle" className="text-[9px] font-mono fill-slate-500 dark:text-zinc-400">
                         ~40 min transit
                       </text>
                     </g>
 
-                    {/* Node 4: Khargone Hub (SH-1) */}
-                    <g transform="translate(530, 205)">
+                    {/* Node 4: Khargone Hub (SH-1) — Fully visible with 47px bottom padding */}
+                    <g transform="translate(510, 275)">
                       <circle cx="0" cy="0" r="12" className="fill-purple-500/20 stroke-purple-400" strokeWidth="2" />
                       <circle cx="0" cy="0" r="5" className="fill-purple-400" />
-                      <rect x="-35" y="-32" width="70" height="15" rx="3" className="fill-slate-900 dark:fill-black stroke-slate-700" strokeWidth="0.8" />
+                      <rect x="-38" y="-32" width="76" height="15" rx="3" className="fill-slate-900 dark:fill-black stroke-slate-700" strokeWidth="0.8" />
                       <text x="0" y="-21" textAnchor="middle" className="text-[8.5px] font-mono font-bold fill-purple-300">
                         SH-1 (140 km)
                       </text>
                       <text x="0" y="24" textAnchor="middle" className="text-[11px] font-mono font-bold fill-slate-900 dark:fill-white">
                         KHARGONE HUB
                       </text>
-                      <text x="0" y="37" textAnchor="middle" className="text-[9px] font-mono fill-slate-500 dark:text-zinc-400">
-                        ~3 hrs 15 min transit
+                      <text x="0" y="38" textAnchor="middle" className="text-[9px] font-mono fill-slate-500 dark:text-zinc-400">
+                        ~3 hrs 15 min transit · Nimar Belt
                       </text>
                     </g>
                   </svg>
                 </div>
               </div>
 
-              {/* 3 Corridor Metric Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-mono text-xs">
-                <div className="p-5 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] space-y-1.5">
-                  <span className="text-[10px] text-zinc-400 uppercase tracking-wider">PRIMARY FREIGHT ARTERY</span>
-                  <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-sm">
-                    <Navigation className="w-4 h-4 text-orange-400" />
-                    <span>NH-52 Dewas Corridor (42 km)</span>
+              {/* 4 Responsive Corridor Destination Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 font-mono text-xs">
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] space-y-1.5 shadow-2xs">
+                  <span className="text-[10px] text-orange-400 font-bold uppercase tracking-wider block">PRIMARY FREIGHT ARTERY</span>
+                  <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs sm:text-sm">
+                    <Navigation className="w-3.5 h-3.5 text-orange-400 shrink-0" />
+                    <span className="truncate">NH-52 Dewas (42 km)</span>
                   </div>
-                  <span className="text-[11px] text-zinc-400 block">
-                    Average Transit: ~50 min · Dedicated FTL Consignments
+                  <span className="text-[11px] text-slate-500 dark:text-zinc-400 block leading-relaxed">
+                    Transit: ~50 min · Dedicated FTL Consignments
                   </span>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] space-y-1.5">
-                  <span className="text-[10px] text-zinc-400 uppercase tracking-wider">NORTHERN EXPRESS ARTERY</span>
-                  <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-sm">
-                    <Navigation className="w-4 h-4 text-sky-400" />
-                    <span>SH-27 Ujjain Corridor (56 km)</span>
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] space-y-1.5 shadow-2xs">
+                  <span className="text-[10px] text-sky-400 font-bold uppercase tracking-wider block">NORTHERN GRAIN ARTERY</span>
+                  <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs sm:text-sm">
+                    <Navigation className="w-3.5 h-3.5 text-sky-400 shrink-0" />
+                    <span className="truncate">SH-27 Ujjain (56 km)</span>
                   </div>
-                  <span className="text-[11px] text-zinc-400 block">
-                    Average Transit: ~70 min · High-Volume Mandi Hub
+                  <span className="text-[11px] text-slate-500 dark:text-zinc-400 block leading-relaxed">
+                    Transit: ~70 min · High-Volume Mandi Hub
                   </span>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] space-y-1.5">
-                  <span className="text-[10px] text-zinc-400 uppercase tracking-wider">SOUTHERN REGIONAL ARTERY</span>
-                  <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-sm">
-                    <Navigation className="w-4 h-4 text-purple-400" />
-                    <span>SH-1 Khargone Corridor (140 km)</span>
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] space-y-1.5 shadow-2xs">
+                  <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider block">MALWA LOCAL ARTERY</span>
+                  <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs sm:text-sm">
+                    <Navigation className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                    <span className="truncate">NH-347BG Sanwer (32 km)</span>
                   </div>
-                  <span className="text-[11px] text-zinc-400 block">
-                    Average Transit: ~195 min · Nimar Agricultural Belt
+                  <span className="text-[11px] text-slate-500 dark:text-zinc-400 block leading-relaxed">
+                    Transit: ~40 min · Rural Mandi Distribution
+                  </span>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] space-y-1.5 shadow-2xs">
+                  <span className="text-[10px] text-purple-400 font-bold uppercase tracking-wider block">SOUTHERN NIMAR ARTERY</span>
+                  <div className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 text-xs sm:text-sm">
+                    <Navigation className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                    <span className="truncate">SH-1 Khargone (140 km)</span>
+                  </div>
+                  <span className="text-[11px] text-slate-500 dark:text-zinc-400 block leading-relaxed">
+                    Transit: ~195 min · Nimar Agricultural Belt
                   </span>
                 </div>
               </div>
@@ -606,7 +617,7 @@ export const PublicLandingPage: React.FC = () => {
               {/* Geographic Logistics Notice */}
               <div className="p-4 rounded-2xl bg-white dark:bg-[#07090E] border border-slate-200/80 dark:border-white/[0.06] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
                 <div className="flex items-center gap-2.5">
-                  <span className="w-2 h-2 rounded-full bg-orange-500" />
+                  <span className="w-2 h-2 rounded-full bg-orange-500 shrink-0" />
                   <span className="text-slate-700 dark:text-zinc-300">
                     Regional Mandis: Dewas, Sanwer, Ujjain, Khargone
                   </span>
