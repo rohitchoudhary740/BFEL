@@ -114,7 +114,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isOpe
             title: 'Sales Agent Workspace',
             items: [
               { id: 'overview', label: 'Sales Overview', icon: LayoutDashboard },
-              { id: 'dealers', label: 'My Dealers', icon: Users },
+              { id: 'dealers', label: 'My Assigned Dealerships', icon: Users },
               { id: 'visits', label: 'Dealer Visits', icon: MapPin },
               { id: 'create_order', label: '+ Create Order', icon: PlusCircle, highlight: true },
               { id: 'followups', label: 'Order Follow-ups', icon: Clock },
@@ -167,6 +167,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, isOpe
               { id: 'payment_desk', label: 'Payment Desk', icon: CreditCard, badge: pendingPaymentsCount },
               { id: 'loading', label: 'Truck Loading Planner', icon: Truck, badge: activeLoadingCount },
               { id: 'dispatches', label: 'Dispatches', icon: FileText },
+              { id: 'tracking', label: 'Delivery Tracking', icon: MapPin },
               { id: 'claims', label: 'Claims', icon: AlertCircle, badge: pendingClaimsCount },
               { id: 'users', label: 'User Management', icon: Users, badge: pendingSignupsCount },
               { id: 'products', label: 'Product Catalog', icon: Package },

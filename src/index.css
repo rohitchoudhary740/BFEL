@@ -8,12 +8,173 @@
 }
 
 @layer base {
+  /* =========================================================================
+     LIGHT THEME (Clean Industrial Palette)
+     ========================================================================= */
+  :root, [data-theme='light'] {
+    /* Backgrounds */
+    --bfel-bg-base: #F4F6F9;
+    --bfel-bg-surface: #FFFFFF;
+    --bfel-bg-surface-raised: #E9EEF4;
+    --bfel-bg-surface-hover: #DEE5EF;
+    --bfel-bg-surface-active: #D2DDE9;
+    --bfel-bg-glass: rgba(255, 255, 255, 0.85);
+
+    /* Hairline & Structural Borders */
+    --bfel-border-hairline: #D8E1EC;
+    --bfel-border-subtle: #E9EEF4;
+    --bfel-border-strong: #B8C8DB;
+    --bfel-border-glow: rgba(217, 119, 6, 0.25);
+    --bfel-border-cyan-glow: rgba(14, 165, 233, 0.25);
+
+    /* Text & Typography */
+    --bfel-text-primary: #090D14;
+    --bfel-text-secondary: #475569;
+    --bfel-text-muted: #64748B;
+    --bfel-text-placeholder: #94A3B8;
+    --bfel-text-inverse: #F8FAFC;
+
+    /* Brand Accents (Calibrated for WCAG AA contrast against light) */
+    --bfel-brand-amber: #D97706;
+    --bfel-brand-amber-hover: #B45309;
+    --bfel-brand-amber-bg: rgba(217, 119, 6, 0.1);
+    --bfel-brand-amber-border: rgba(217, 119, 6, 0.25);
+
+    --bfel-tech-cyan: #0284C7;
+    --bfel-tech-cyan-hover: #0369A1;
+    --bfel-tech-cyan-bg: rgba(2, 132, 199, 0.1);
+    --bfel-tech-cyan-border: rgba(2, 132, 199, 0.25);
+
+    --bfel-nav-active: #4D7C0F;
+    --bfel-nav-active-bg: rgba(77, 124, 15, 0.12);
+
+    /* Semantic Status */
+    --bfel-status-success: #059669;
+    --bfel-status-success-bg: rgba(5, 150, 105, 0.1);
+    --bfel-status-warning: #D97706;
+    --bfel-status-warning-bg: rgba(217, 119, 6, 0.1);
+    --bfel-status-error: #DC2626;
+    --bfel-status-error-bg: rgba(220, 38, 38, 0.1);
+    --bfel-status-info: #0284C7;
+    --bfel-status-info-bg: rgba(2, 132, 199, 0.1);
+
+    /* Surface Elevation Shadows */
+    --bfel-shadow-sm: 0 1px 2px 0 rgba(9, 13, 20, 0.05);
+    --bfel-shadow-md: 0 4px 8px -1px rgba(9, 13, 20, 0.08);
+    --bfel-shadow-lg: 0 10px 20px -3px rgba(9, 13, 20, 0.12);
+    --bfel-shadow-panel: 0 8px 30px rgba(9, 13, 20, 0.12);
+
+    /* Radii & Timing */
+    --bfel-radius-sm: 4px;
+    --bfel-radius-md: 8px;
+    --bfel-radius-lg: 12px;
+    --bfel-radius-xl: 16px;
+    --bfel-transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --bfel-transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --bfel-transition-smooth: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* =========================================================================
+     DARK THEME (Industrial Executive Palette)
+     ========================================================================= */
+  .dark, [data-theme='dark'] {
+    /* Foundational Mill Neutrals */
+    --bfel-bg-base: #06080C;
+    --bfel-bg-surface: #0B1017;
+    --bfel-bg-surface-raised: #111823;
+    --bfel-bg-surface-hover: #162232;
+    --bfel-bg-surface-active: #1E2D42;
+    --bfel-bg-glass: rgba(11, 16, 23, 0.85);
+
+    /* Hairline & Structural Borders */
+    --bfel-border-hairline: #1B2636;
+    --bfel-border-subtle: #131C28;
+    --bfel-border-strong: #2E4057;
+    --bfel-border-glow: rgba(245, 158, 11, 0.25);
+    --bfel-border-cyan-glow: rgba(56, 189, 248, 0.25);
+
+    /* Text & Typography */
+    --bfel-text-primary: #F8FAFC;
+    --bfel-text-secondary: #94A3B8;
+    --bfel-text-muted: #64748B;
+    --bfel-text-placeholder: #475569;
+    --bfel-text-inverse: #06080C;
+
+    /* Core Brand & Telemetry Accents */
+    --bfel-brand-amber: #F59E0B;
+    --bfel-brand-amber-hover: #D97706;
+    --bfel-brand-amber-bg: rgba(245, 158, 11, 0.12);
+    --bfel-brand-amber-border: rgba(245, 158, 11, 0.3);
+
+    --bfel-tech-cyan: #38BDF8;
+    --bfel-tech-cyan-hover: #0EA5E9;
+    --bfel-tech-cyan-bg: rgba(56, 189, 248, 0.12);
+    --bfel-tech-cyan-border: rgba(56, 189, 248, 0.3);
+
+    --bfel-nav-active: #DEF36A;
+    --bfel-nav-active-bg: rgba(222, 243, 106, 0.12);
+
+    /* Semantic Status */
+    --bfel-status-success: #10B981;
+    --bfel-status-success-bg: rgba(16, 185, 129, 0.12);
+    --bfel-status-warning: #F59E0B;
+    --bfel-status-warning-bg: rgba(245, 158, 11, 0.12);
+    --bfel-status-error: #EF4444;
+    --bfel-status-error-bg: rgba(239, 68, 68, 0.12);
+    --bfel-status-info: #38BDF8;
+    --bfel-status-info-bg: rgba(56, 189, 248, 0.12);
+
+    /* Surface Elevation Shadows */
+    --bfel-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.35);
+    --bfel-shadow-md: 0 4px 12px 0 rgba(0, 0, 0, 0.4);
+    --bfel-shadow-lg: 0 12px 28px -4px rgba(0, 0, 0, 0.5);
+    --bfel-shadow-panel: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+  }
+
   body {
     font-family: var(--font-sans);
+    background-color: var(--bfel-bg-base);
+    color: var(--bfel-text-primary);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 }
 
-/* Custom scrollbars for data tables and queues */
+/* =========================================================================
+   OPERATIONAL TYPOGRAPHY & TABULAR NUMERALS
+   ========================================================================= */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================================
+   ACCESSIBILITY: FOCUS RING STYLES
+   ========================================================================= */
+.bfel-focus-ring:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bfel-bg-base), 0 0 0 4px var(--bfel-brand-amber);
+}
+
+.bfel-focus-ring-cyan:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--bfel-bg-base), 0 0 0 4px var(--bfel-tech-cyan);
+}
+
+/* =========================================================================
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================================
+   CUSTOM SCROLLBARS FOR HIGH-DENSITY TABLES & QUEUES
+   ========================================================================= */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -22,9 +183,9 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.4);
+  background: rgba(148, 163, 184, 0.3);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 116, 139, 0.6);
+  background: rgba(100, 116, 139, 0.5);
 }

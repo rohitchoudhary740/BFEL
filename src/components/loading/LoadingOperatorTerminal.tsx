@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useApp, BAG_WEIGHT_KG, TRUCK_LIMITS, bagsToKg, bagsToMT, formatINR } from '../../context/AppContext';
 import { TruckCapacityBar } from '../common/TruckCapacityBar';
+import { TruckCapacityVisualizer } from '../../design-system/TruckCapacityVisualizer';
 import { StatusBadge } from '../common/StatusBadge';
 import { PageHeader } from '../common/PageHeader';
 import {
@@ -506,23 +507,14 @@ export const LoadingOperatorTerminal: React.FC<LoadingOperatorTerminalProps> = (
             </div>
 
             {/* Visual Cargo-bed layout */}
-            <div className="space-y-2 pt-2">
-              <div className="flex justify-between text-xs text-slate-500">
-                <span>Truck Cargo Bed ({activeOrder?.truckCapacity.replace('_', ' ')})</span>
-                <span className="font-mono">{filledSlots} / {totalSlots} stacks full</span>
-              </div>
-              <div className="grid grid-cols-10 gap-1 p-2 bg-slate-100 dark:bg-slate-800 rounded-lg">
-                {Array.from({ length: totalSlots }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`h-5 rounded-xs transition-colors ${
-                      i < filledSlots
-                        ? 'bg-amber-500'
-                        : 'bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600'
-                    }`}
-                  />
-                ))}
-              </div>
+            <div className="pt-2">
+              <TruckCapacityVisualizer
+                capacityType={activeOrder?.truckCapacity || '20_MT'}
+                currentBags={loadedBags}
+                label="Active Bay Live Cargo Bed Elevation"
+                showAxleLayout={true}
+                showDisclaimers={false}
+              />
             </div>
           </div>
         </div>

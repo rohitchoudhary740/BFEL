@@ -4,6 +4,7 @@ import { MetricCard } from '../common/MetricCard';
 import { StatusBadge } from '../common/StatusBadge';
 import { PageHeader } from '../common/PageHeader';
 import { OrderDetailDrawer } from '../admin/OrderDetailDrawer';
+import { OperationalMap } from '../../design-system/OperationalMap';
 import { PlaceFeedOrderWizard } from '../admin/PlaceFeedOrderWizard';
 import { Order } from '../../types';
 import {
@@ -606,6 +607,14 @@ export const DistributorDashboard: React.FC<DistributorDashboardProps> = ({ acti
               <span>+ Book Dealer Order</span>
             </button>
           }
+        />
+
+        {/* Distributor Retail Network Geographic Map (Phase 3.2) */}
+        <OperationalMap
+          role="distributor"
+          title="Distributor Retail Dealer Network Map"
+          subtitle="Authorized rural mandi dealers serviced by Nimar Regional Stockist Hub."
+          height="380px"
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">

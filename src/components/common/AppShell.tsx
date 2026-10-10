@@ -4,6 +4,7 @@ import { useAuth } from '../../context/AuthContext';
 import { UserRole } from '../../types';
 
 // Auth and Onboarding Pages
+import { PublicLandingPage } from '../landing/PublicLandingPage';
 import { LoginPage } from '../auth/LoginPage';
 import { SignupRoleSelectionPage } from '../auth/SignupRoleSelectionPage';
 import { DealerSignupPage } from '../auth/DealerSignupPage';
@@ -108,8 +109,43 @@ export const AppShell: React.FC = () => {
   };
 
   // 1. ROUTING & ACCESS CONTROL GUARD:
-  // If not authenticated or on an auth route, render dedicated Auth views
+  // Public root route renders the PublicLandingPage
+  if (currentAuthRoute === '/' || currentAuthRoute === '') {
+    return <PublicLandingPage />;
+  }
+
+  // If not authenticated, render dedicated Auth / Onboarding views
   if (!isAuthenticated || currentAuthRoute === '/login') {
+    if (currentAuthRoute === '/signup') {
+      return <SignupRoleSelectionPage />;
+    }
+    if (currentAuthRoute === '/signup/dealer') {
+      return <DealerSignupPage />;
+    }
+    if (currentAuthRoute === '/signup/sales-agent') {
+      return <SalesAgentSignupPage />;
+    }
+    if (currentAuthRoute === '/signup/distributor') {
+      return <DistributorRequestPage />;
+    }
+    if (currentAuthRoute === '/signup/accounts') {
+      return <InternalRestrictedPage roleType="accounts" />;
+    }
+    if (currentAuthRoute === '/signup/loading') {
+      return <InternalRestrictedPage roleType="loading" />;
+    }
+    if (currentAuthRoute === '/signup/admin') {
+      return <InternalRestrictedPage roleType="admin" />;
+    }
+    if (currentAuthRoute === '/forgot-password') {
+      return <ForgotPasswordPage />;
+    }
+    if (currentAuthRoute === '/otp-verification' || currentAuthRoute === '/verify-otp') {
+      return <LoginPage defaultMethod="otp" />;
+    }
+    if (currentAuthRoute === '/access-denied' || currentAuthRoute === '/access-restricted') {
+      return <AccessDeniedPage />;
+    }
     return <LoginPage />;
   }
 

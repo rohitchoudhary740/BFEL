@@ -5,6 +5,7 @@ import { StatusBadge } from '../common/StatusBadge';
 import { PageHeader } from '../common/PageHeader';
 import { PlaceFeedOrderWizard } from '../admin/PlaceFeedOrderWizard';
 import { OrderDetailDrawer } from '../admin/OrderDetailDrawer';
+import { OperationalMap } from '../../design-system/OperationalMap';
 import { Order } from '../../types';
 import {
   MapPin,
@@ -94,6 +95,14 @@ export const SalesAgentDashboard: React.FC<SalesAgentDashboardProps> = ({ active
               <span>+ Check In at Dealer</span>
             </button>
           }
+        />
+
+        {/* Territory Dealership Geographic Map (Phase 3.2) */}
+        <OperationalMap
+          role="sales_agent"
+          title="Assigned Territory Dealership Map"
+          subtitle="Field territory coverage across Dewas, Khargone, Sanwer, and Ujjain mandi yards."
+          height="380px"
         />
 
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-xs space-y-3">

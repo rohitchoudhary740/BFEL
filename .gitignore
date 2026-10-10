@@ -6,3 +6,8 @@ coverage/
 *.log
 .env*
 !.env.example
+*.tsbuildinfo
+__pycache__/
+*.pyc
+scratch/
+backend/media/claims/evidence/

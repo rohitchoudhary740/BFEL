@@ -5,6 +5,7 @@ import { StatusBadge } from '../common/StatusBadge';
 import { OrderTimeline } from '../common/OrderTimeline';
 import { PlaceFeedOrderWizard } from '../admin/PlaceFeedOrderWizard';
 import { DeliveryTrackingView } from '../admin/DeliveryTrackingView';
+import { OperationalMap } from '../../design-system/OperationalMap';
 import {
   PlusCircle,
   Truck,
@@ -235,6 +236,20 @@ export const DealerDashboard: React.FC<DealerDashboardProps> = ({ activeTab, set
                   Plant Operations Timeline
                 </span>
                 <OrderTimeline status={currentSelectedOrder.status} />
+              </div>
+
+              {/* Geographic Consignment Route Schematic (Phase 3.2) */}
+              <div className="pt-2">
+                <OperationalMap
+                  role="dealer"
+                  title="Consignment Transit Route (Manglia Mill to Dewas Godown)"
+                  subtitle="Authoritative highway logistics corridor between BFEL Indore Plant and registered mandi godown."
+                  selectedMarkerId="shipment-dewas-transit"
+                  showLayersControl={false}
+                  showViewToggle={false}
+                  allowSearch={false}
+                  height="340px"
+                />
               </div>
             </div>
           )}

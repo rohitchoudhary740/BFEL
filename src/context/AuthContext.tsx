@@ -362,14 +362,20 @@ export const AuthProvider: React.FC<{
   });
 
   const [currentAuthRoute, setCurrentAuthRoute] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const path = window.location.pathname;
+      if (path && path !== '/') {
+        return path;
+      }
+    }
     const saved = localStorage.getItem('bfel_current_route');
-    if (saved) return saved;
+    if (saved && saved !== '/login') return saved;
     const savedUser = localStorage.getItem('bfel_auth_current_user');
     if (savedUser) {
       const u: User = JSON.parse(savedUser);
       return `/${u.role === 'sales_agent' ? 'sales' : (u.role === 'loading_operator' ? 'loading' : u.role)}`;
     }
-    return '/login';
+    return '/';
   });
 
   const [isLoading, setIsLoading] = useState<boolean>(false);

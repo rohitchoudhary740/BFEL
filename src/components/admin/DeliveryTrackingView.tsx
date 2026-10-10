@@ -4,6 +4,7 @@ import { Order } from '../../types';
 import { PageHeader } from '../common/PageHeader';
 import { StatusBadge } from '../common/StatusBadge';
 import { OrderTimeline } from '../common/OrderTimeline';
+import { OperationalMap } from '../../design-system/OperationalMap';
 import {
   Truck,
   MapPin,
@@ -58,6 +59,20 @@ export const DeliveryTrackingView: React.FC<DeliveryTrackingViewProps> = ({
         title="Consignment Delivery &amp; Transit Tracking"
         subtitle="Real-time transit telemetry, truck gate departures, ETA tracking and destination godown delivery confirmation."
         badge={{ text: `${activeShipments.length} Active Shipments`, variant: 'blue' }}
+      />
+
+      {/* Interactive Geographic Distribution Map (Phase 3.2) */}
+      <OperationalMap
+        role="admin"
+        title="Central India Consignment &amp; Mandi Geographic Map"
+        subtitle="Live factory dispatch routes anchored to verified mandi yards across Indore, Dewas, Ujjain and Khargone."
+        selectedMarkerId={selectedOrder ? `shipment-${selectedOrder.id}` : null}
+        onSelectMarker={(marker) => {
+          if (marker) {
+            const matched = orders.find((o) => o.assignedVehicle === marker.assignedVehicle || marker.id.includes(o.id));
+            if (matched) setSelectedOrder(matched);
+          }
+        }}
       />
 
       {/* Search */}
